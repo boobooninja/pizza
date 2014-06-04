@@ -36,6 +36,15 @@ describe Pizza do
       expect(pizza.toppings.last.name).to eq('pepper')
     end
   end
+
+  describe 'deliver!' do
+    it 'sets the delivery_time for 30 minutes from now' do
+      pizza = Pizza.new
+      time = pizza.deliver!
+
+      expect(pizza.delivery_time).to eq(time)
+    end
+  end
 end
 
 describe Topping do
