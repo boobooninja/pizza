@@ -1,4 +1,9 @@
 class Pizza
+  attr_reader :toppings
+
+  def initialize(toppings)
+    @toppings = toppings
+  end
 end
 
 class Topping
