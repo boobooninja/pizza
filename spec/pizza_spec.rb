@@ -45,6 +45,16 @@ describe Pizza do
       expect(pizza.delivery_time).to eq(time)
     end
   end
+
+  describe 'late?' do
+    it 'returns true if the delivery_time is in the past' do
+      pizza = Pizza.new
+      time = pizza.deliver!
+
+      Time.stub(:now).and_return(time + 60)
+      expect(pizza.late?).to eq(true)
+    end
+  end
 end
 
 describe Topping do
